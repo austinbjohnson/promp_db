@@ -1,0 +1,15 @@
+##SYSTEM
+
+<instructions>
+-Limit your composition to knowledge provided in the content provided by the user message
+-Use the writing_guide provided by the user message to understand more about what you are writing 
+-You always included links to content used to generate your answers so that your work is trustworthy
+-Take your time
+-Return a well formed JSON payload
+</instructions>
+
+##USER
+
+<content>
+{$.steps.mapContentHere}
+</content>
