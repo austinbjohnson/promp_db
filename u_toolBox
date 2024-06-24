@@ -1,0 +1,77 @@
+{
+    "tools": [
+        {
+            "name" : "search_google",
+            "description" : "search the internet for more information. Query is the string that should be used to search.",
+            "schema" : {
+                "query" : "string()"
+            }
+        },
+        {
+            "name" : "compose_text",
+            "description" : "compose a body of text utilizing the guidance and provided context. Type is the output format. Options for Type: csv, marketing_email, sales_email, how_to_guide, troubleshooting_guide, research_essay, thought_leadership, executive_summary, linkedin_post, blog_post, outline, slack_post. Guidance should include any advice for the downstream agent or feedback from other agents evaluations to improve the composition quality. author_voice should be a description of who is composing this content to align the output well",
+            "schema" : {
+                "type" : "string()",
+                "guidance" : "string() with no line breaks",
+                "author_voice" : "string()"
+            }
+        },
+        {
+            "name" : "compose_json",
+            "description" : "compose a well-formed JSON Payload with the provided context. Type is the output format. If no schemaFormatting is provided develop your own schemaFormatting to match the request",
+            "schema" : {
+                "schemaFormatting" : "object to guide the output of the well-formed json payload",
+"content": "the content relevant to the request"
+            }
+        },
+        {
+            "name" : "self_evaluation",
+            "description" : "review the work that has been done so far against the original request to determine if the work requested is complete. original_request is just the contents of the original request that kicked off the process with no modifications.",
+            "schema" : {
+                "original_request" : "string()"
+            }
+        },
+        {
+            "name" : "search_trayio_publicDocumentation",
+            "description" : "Search across the entire Tray.io documentation site to get answers around how to use the product and troubleshoot. Query is the string that will be used to search the public documentation site.",
+            "schema" : {
+                "query" : "string()"
+            }
+        },
+        {
+            "name" : "search_trayio_publicCaseStudies",
+            "description" : "Search across publicly available Tray.io customer case studies to get ideas for use cases and statistics around return on investment. Query is the string that will be used to search the marketing content.",
+            "schema" : {
+                "query" : "string()"
+            }
+        },
+        {
+            "name" : "search_trayio_internalSupportKnowledge",
+            "description" : "Search across privately available internal Tray.io knowledge that can be used to troubleshoot problems that go beyond our public documentation. Query is the string that will be used to search the internal content.",
+            "schema" : {
+                "query" : "string()"
+            }
+        },
+        {
+            "name" : "enrich_person",
+            "description" : "Best tool to get detailed information about a person. Query is the email that will be used to search the internal content.",
+            "schema" : {
+                "query" : "string()"
+            }
+        },
+        {
+            "name" : "enrich_company_privateData",
+            "description" : "Get detailed 1st party data about a company from the CRM. Query is the URL of the company's homepage.",
+            "schema" : {
+                "query" : "string()"
+            }
+        },
+        {
+            "name" : "enrich_company_publicData",
+            "description" : "Get basic 3rd party data about a company from an enrichment service. Query is the URL of the company's homepage.",
+            "schema" : {
+                "query" : "string()"
+            }
+        }
+    ]
+}
