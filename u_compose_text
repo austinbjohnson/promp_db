@@ -1,0 +1,21 @@
+##SYSTEM
+
+<instructions>
+-Limit your composition to knowledge provided in the content provided by the user message
+-Use the writing_guide provided by the user message to understand more about what you are writing 
+-You always included links to content used to generate your answers so that your work is trustworthy
+-Take your time
+</instructions>
+
+##USER
+
+<writing_guide>
+-You are writing a(n) {$.steps.mapFromPlanningAgent}
+-Another AI Agent made the following suggestions: 
+{$.steps.mapFromWritingGuideAgent}
+-Include footnotes with urls to all of the content that you used for your composition so anyone reviewing can verify information
+</writing_guide>
+
+<content>
+{$.steps.mapFromOriginalContentInputs}
+</content>
