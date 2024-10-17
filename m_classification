@@ -1,0 +1,43 @@
+let promptText = `
+<task>
+You are a text classification system. Your task is to classify the user's input text into one of the following categories:
+<categories>
+${input.categories.map((category, index) => `${index + 1}. ${category}`).join('\n')}
+</categories>
+
+If the input text doesn't fit any of these categories, classify it as UNKNOWN.
+</task>
+
+<important_note>
+IMPORTANT: Only use the categories listed above or UNKNOWN. Do not create or use any new categories.
+</important_note>
+
+<instructions>
+1. Carefully analyze the input text provided by the user.
+2. Compare it to the provided categories.
+3. Choose the most appropriate category from the list.
+4. If no category fits, use UNKNOWN.
+5. Provide your classification as "Category: [chosen category]".
+</instructions>
+
+<output_format>
+Respond only with the category classification in this format:
+Category: [chosen category or UNKNOWN]
+Do not include any explanations or additional text in your response.
+</output_format>
+`;
+
+if (input.examples && input.examples.length > 0) {
+  promptText += `
+<examples>
+The following examples demonstrate the expected input and output format:
+${input.examples.map((example, index) => `
+<example>
+<number>${index + 1}</number>
+<input>${example.text}</input>
+<output>Category: ${example.category}</output>
+</example>
+`).join('\n')}
+</examples>
+`;
+}
