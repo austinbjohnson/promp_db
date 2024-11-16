@@ -186,5 +186,5 @@ Ensure all tags are properly closed
 </formatting_guides>
 
 <calling_interface>
-{$.steps.trigger.body.calling_interface}
+{{$.steps.trigger.body.calling_interface or:'markdown'}}
 </calling_interface>
